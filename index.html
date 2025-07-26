@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Builder-Investor Bridge: Korean Innovation to Silicon Valley Scaling</title>
+    <title>The Technical Builder-Investor Who Bridges Two Worlds</title>
     <style>
         * {
             margin: 0;
@@ -45,6 +45,14 @@
             font-size: 1.2em;
             color: #888;
             font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: 1.4em;
+            color: #ff6b00;
+            font-weight: 600;
+            margin-top: 10px;
         }
         
         .grid {
@@ -72,11 +80,18 @@
         
         .card h2 {
             font-size: 1.5em;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #ff6b00;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+        
+        .card-subtitle {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
         }
         
         .icon {
@@ -90,47 +105,27 @@
             font-size: 1.2em;
         }
         
-        .timeline {
-            position: relative;
-            padding-left: 30px;
+        .journey-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: linear-gradient(to bottom, #ff6b00, #ff8533);
-        }
-        
-        .timeline-item {
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -34px;
-            top: 5px;
-            width: 10px;
-            height: 10px;
-            background: #ff6b00;
-            border-radius: 50%;
-            box-shadow: 0 0 0 3px #141414, 0 0 0 5px #ff6b00;
-        }
-        
-        .timeline-year {
+        .journey-item {
+            background: #1a1a1a;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
             font-size: 0.9em;
-            color: #666;
-            margin-bottom: 5px;
+            position: relative;
         }
         
-        .timeline-content {
-            font-size: 1.1em;
-            color: #ccc;
+        .journey-arrow {
+            color: #ff6b00;
+            margin: 0 10px;
         }
         
         .highlight {
@@ -138,133 +133,141 @@
             font-weight: 600;
         }
         
+        .edge-box {
+            background: #1a1a1a;
+            border: 2px solid #ff6b00;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .edge-box::before {
+            content: 'EDGE';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #141414;
+            padding: 0 10px;
+            color: #ff6b00;
+            font-size: 0.8em;
+            font-weight: 700;
+        }
+        
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 15px;
             margin-top: 20px;
         }
         
         .stat-box {
             background: #1a1a1a;
-            padding: 20px;
-            border-radius: 15px;
+            padding: 15px;
+            border-radius: 12px;
             text-align: center;
             border: 1px solid #333;
         }
         
         .stat-number {
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: 700;
             color: #ff6b00;
             display: block;
         }
         
         .stat-label {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #888;
             margin-top: 5px;
         }
         
-        .portfolio-list {
-            display: flex;
-            flex-direction: column;
+        .portfolio-showcase {
+            background: #0a0a0a;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         
         .portfolio-item {
-            background: #1a1a1a;
-            padding: 15px 20px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: #141414;
+            padding: 15px;
+            border-radius: 10px;
             border: 1px solid #333;
         }
         
         .portfolio-name {
             font-weight: 600;
+            color: #fff;
         }
         
         .portfolio-status {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #4ade80;
+            margin-top: 5px;
         }
         
-        .activity-chart {
+        .trust-indicators {
             display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            align-items: flex-end;
-            height: 150px;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
         }
         
-        .activity-bar {
-            flex: 1;
-            background: linear-gradient(to top, #ff6b00, #ff8533);
-            border-radius: 8px 8px 0 0;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .activity-bar:hover {
-            opacity: 0.8;
-        }
-        
-        .activity-label {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.8em;
-            color: #666;
-            white-space: nowrap;
-        }
-        
-        .activity-percent {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-        
-        .bridge-visual {
+        .trust-item {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin: 30px 0;
-            position: relative;
-        }
-        
-        .city-box {
+            gap: 15px;
+            padding: 15px;
             background: #1a1a1a;
-            padding: 20px 30px;
-            border-radius: 15px;
-            border: 2px solid #ff6b00;
-            font-weight: 600;
-            font-size: 1.2em;
-            z-index: 2;
+            border-radius: 12px;
+            border: 1px solid #333;
         }
         
-        .bridge-line {
-            position: absolute;
-            top: 50%;
-            left: 25%;
-            right: 25%;
-            height: 3px;
-            background: linear-gradient(90deg, #ff6b00 0%, #ff8533 50%, #ff6b00 100%);
-            z-index: 1;
+        .trust-icon {
+            font-size: 1.5em;
         }
         
-        .bridge-stats {
+        .activity-visual {
             display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
+            gap: 15px;
+            margin: 20px 0;
+            align-items: stretch;
+        }
+        
+        .activity-box {
+            flex: 1;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #333;
             text-align: center;
+        }
+        
+        .activity-box h4 {
+            color: #ff6b00;
+            margin-bottom: 10px;
+        }
+        
+        .empathy-story {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ff6b00;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #ccc;
+            margin: 10px 0;
         }
         
         .opportunity-section {
@@ -335,143 +338,193 @@
             .header h1 {
                 font-size: 1.8em;
             }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>From Korean Gamer to Entrepreneur in SF</h1>
+            <h1>The Technical Builder-Investor Who Bridges Two Worlds</h1>
             <p class="subtitle">Technical Founder • Active Builder • Cross-Border Investor</p>
+            <p class="tagline">I Code with Founders on Weekends, Bridge Continents on Weekdays</p>
         </header>
 
         <div class="grid">
-            <!-- Builder Journey -->
+            <!-- Pillar 1: Proven 0-to-1 Builder + Investor DNA -->
             <div class="card">
-                <h2><span class="icon">🚀</span> Builder Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">Early 2000s</div>
-                        <div class="timeline-content"><span class="highlight">Nexon & NCsoft</span> - Gaming Giants</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2010s</div>
-                        <div class="timeline-content"><span class="highlight">Salesforce & Nextdoor</span> - Silicon Valley Tech</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2018-2022</div>
-                        <div class="timeline-content">Co-founder/CTO → <span class="highlight">$400M AUM</span> (1 pivot) → Exit</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023-Present</div>
-                        <div class="timeline-content">New Venture + <span class="highlight">Sony Blockchain</span> Partnership</div>
-                    </div>
+                <h2><span class="icon">🚀</span> Proven 0-to-1 Builder + Investor DNA</h2>
+                <p class="card-subtitle">Not retired, still building</p>
+                
+                <div class="journey-flow">
+                    <div class="journey-item">Nexon/NCsoft</div>
+                    <span class="journey-arrow">→</span>
+                    <div class="journey-item">Salesforce/Nextdoor</div>
+                    <span class="journey-arrow">→</span>
+                    <div class="journey-item">Co-founder/CTO (Crypto VC)</div>
+                    <span class="journey-arrow">→</span>
+                    <div class="journey-item"><span class="highlight">Scaled up to $400M AUM</span></div>
                 </div>
-                <div class="stat-box" style="margin-top: 20px;">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Different 0-to-1 Journeys</span>
-                </div>
-            </div>
-
-            <!-- Investment Impact -->
-            <div class="card">
-                <h2><span class="icon">💎</span> Investment Track Record</h2>
-                <div class="portfolio-list">
-                    <div class="portfolio-item">
-                        <span class="portfolio-name">DSRV</span>
-                        <span class="portfolio-status">First Check → $12M Series B</span>
-                    </div>
-                    <div class="portfolio-item">
-                        <span class="portfolio-name">Planetarium</span>
-                        <span class="portfolio-status">Seed + Accel → Acquired (Animoca Brands)</span>
-                    </div>
-                    <div class="portfolio-item">
-                        <span class="portfolio-name">Xangle</span>
-                        <span class="portfolio-status">First Check → Market Leader</span>
-                    </div>
-                    <div class="portfolio-item">
-                        <span class="portfolio-name">Sunnyside Labs</span>
-                        <span class="portfolio-status">Angel Investment → Optimism Core Dev Team</span>
-                    </div>
-                </div>
-                <div class="stats-grid" style="margin-top: 20px;">
-                    <div class="stat-box">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Investments</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">80%</span>
-                        <span class="stat-label">Technical Founders</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">First</span>
-                        <span class="stat-label">Institutional Check</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Korean-US Bridge -->
-            <div class="card">
-                <h2><span class="icon">🌉</span> The Korean-US Bridge</h2>
-                <div class="bridge-visual">
-                    <div class="city-box">Seoul 🇰🇷</div>
-                    <div class="bridge-line"></div>
-                    <div class="city-box">SF Bay Area 🇺🇸</div>
-                </div>
-                <div class="bridge-stats">
-                    <div>
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Monthly Founder<br>Advisory Calls</div>
-                    </div>
-                    <div>
-                        <div class="stat-number">3-5</div>
-                        <div class="stat-label">Quarterly US<br>Introductions</div>
-                    </div>
-                    <div>
-                        <div class="stat-number">20+</div>
-                        <div class="stat-label">Korean VC<br>Relationships</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Still Building -->
-            <div class="card">
-                <h2><span class="icon">⚡</span> Active Builder (Monthly)</h2>
-                <div class="activity-chart">
-                    <div class="activity-bar" style="height: 60%">
-                        <span class="activity-percent">45%</span>
-                        <span class="activity-label">Vibe Coding</span>
-                    </div>
-                    <div class="activity-bar" style="height: 50%">
-                        <span class="activity-percent">30%</span>
-                        <span class="activity-label">Mentoring/Advisory</span>
-                    </div>
-                    <!-- <div class="activity-bar" style="height: 40%">
-                        <span class="activity-percent">20%</span>
-                        <span class="activity-label">KR Advisory</span>
+                
+                <div class="edge-box">
+                    <p><strong>The Courage to Leave Success:</strong> After exiting as CTO, I walked away to build something bigger. Two more pivots taught me the emotional journey every founder faces.</p>
+                    <!-- <div class="stats-grid" style="margin-top: 15px;">
+                        <div class="stat-box">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">0-to-1 Journeys</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Additional Pivots</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">Active</span>
+                            <span class="stat-label">Builder Today</span>
+                        </div>
                     </div> -->
-                    <div class="activity-bar" style="height: 30%">
-                        <span class="activity-percent">15%</span>
-                        <span class="activity-label">Hackathons</span>
-                    </div>
-                    <div class="activity-bar" style="height: 20%">
-                        <span class="activity-percent">10%</span>
-                        <span class="activity-label">Deal Review</span>
+                </div>
+                
+                <div class="portfolio-showcase">
+                    <h4 style="color: #ff6b00; margin-bottom: 10px;">Investment DNA: First Checks That Matter</h4>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">DSRV</div>
+                            <div class="portfolio-status">First Check → $12M Series B</div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">Planetarium</div>
+                            <div class="portfolio-status">Accel → Animoca Acquisition</div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">Xangle</div>
+                            <div class="portfolio-status">Seed → Market Leader</div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-name">Sunnyside Labs</div>
+                            <div class="portfolio-status">Angel → Optimism Core Dev</div>
+                        </div>
                     </div>
                 </div>
-                <div class="stats-grid" style="margin-top: 40px;">
+            </div>
+
+            <!-- Pillar 2: Unique Deal Flow Advantage -->
+            <div class="card">
+                <h2><span class="icon">🌉</span> Unique Deal Flow Advantage</h2>
+                <p class="card-subtitle">Technical communities others can't penetrate</p>
+                
+                <div class="edge-box">
+                    <p><strong>Online in Seoul, IRL in SF</strong> - I'm at Korean founders meetups and SF hackathons, finding brilliance before it incorporates.</p>
+                </div>
+                
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">📱</span>
+                        <div>
+                            <strong>Midnight Seoul Messages</strong><br>
+                            <span style="color: #888; font-size: 0.9em;">Korean founders text me first about US expansion</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🤝</span>
+                        <div>
+                            <strong>Pre-Flip Advisory</strong><br>
+                            <span style="color: #888; font-size: 0.9em;">Trusted guide for Korea → Silicon Valley transition</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🔗</span>
+                        <div>
+                            <strong>VC Network Bridge</strong><br>
+                            <span style="color: #888; font-size: 0.9em;">20+ Korean VCs refer their best technical teams</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
                     <div class="stat-box">
-                        <span class="stat-number">Daily</span>
-                        <span class="stat-label">Vibe Coder</span>
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Quarterly Advisory</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-number">Head First</span>
-                        <span class="stat-label">Early Adopter</span>
+                        <span class="stat-number">6-12mo</span>
+                        <span class="stat-label">Early Access</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-number">Weekend</span>
-                        <span class="stat-label">Startup Meetups</span>
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Korean VC Relationships</span>
                     </div>
+                </div>
+            </div>
+
+            <!-- Pillar 3: Deep Technical + Market Understanding -->
+            <div class="card">
+                <h2><span class="icon">⚡</span> Deep Technical + Market Understanding</h2>
+                <p class="card-subtitle">Living it daily, not observing from outside</p>
+                
+                <div class="edge-box">
+                    <p><strong>Korean hustle + Silicon Valley scale:</strong> I debug with founders and vibe code myself.</p>
+                </div>
+                
+                <div class="activity-visual">
+                    <div class="activity-box">
+                        <h4>Korean Innovation</h4>
+                        <p class="highlight">Gaming → AI</p>
+                        <p style="font-size: 0.9em; color: #888;">See trends 6-12mo early</p>
+                    </div>
+                    <div class="activity-box">
+                        <h4>My Daily Reality</h4>
+                        <p class="highlight">45% Coding</p>
+                        <p style="font-size: 0.9em; color: #888;">AI tools, side projects</p>
+                    </div>
+                    <div class="activity-box">
+                        <h4>Pattern Recognition</h4>
+                        <p class="highlight">Technical Depth</p>
+                        <p style="font-size: 0.9em; color: #888;">Spot builders, not talkers</p>
+                    </div>
+                </div>
+                
+                <div class="empathy-story" style="margin-top: 20px;">
+                    <p><strong>Why This Matters:</strong></p>
+                    <p class="quote">Korean teams ship AI features in weeks while others debate for months. I see them build the future in Seoul, then help them scale it in SF.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 4: Battle-Tested Founder Empathy -->
+            <div class="card">
+                <h2><span class="icon">💪</span> Battle-Tested Founder Empathy</h2>
+                <p class="card-subtitle">Cross-cultural dimension + personal scars</p>
+                
+                <div class="empathy-story">
+                    <p><strong>The 2AM Pivot Decision:</strong></p>
+                    <p class="quote">I remember convincing my team and investors to pivot. Now when founders call me at midnight, I answer - because I've been there.</p>
+                </div>
+                
+                <div class="edge-box">
+                    <p><strong>The Korean Founder Wave:</strong> Elite Korean entrepreneurs are increasingly choosing Silicon Valley over Seoul. This migration is accelerating rapidly, creating an untapped goldmine of opportunities - and I'm their trusted insider.</p>
+                    
+                    <!-- <div class="stats-grid" style="margin-top: 15px;">
+                        <div class="stat-box">
+                            <span class="stat-number">First</span>
+                            <span class="stat-label">Call They Make</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Pivots Survived</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Active Mentees</span>
+                        </div>
+                    </div> -->
+                </div>
+                
+                <div style="background: #0a0a0a; padding: 20px; border-radius: 12px; margin-top: 20px;">
+                    <p style="font-size: 1.1em; text-align: center;">
+                        <span class="highlight">I speak founder because I am one.</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -479,7 +532,7 @@
         <!-- Opportunity Section -->
         <div class="opportunity-section">
             <h2 class="opportunity-title">The Speedrun Opportunity</h2>
-            <p style="font-size: 1.2em; margin-bottom: 20px;">Korean AI/Gaming Innovation + Silicon Valley Scale = Untapped Alpha</p>
+            <p style="font-size: 1.2em; margin-bottom: 20px;">Korean AI/Gaming Innovation + Silicon Valley Scale = <span class="highlight">Untapped Alpha</span></p>
             
             <div class="opportunity-grid">
                 <div class="opportunity-card">
@@ -488,27 +541,34 @@
                         <li>Fastest AI adoption globally</li>
                         <li>World-class technical execution</li>
                         <li>Gaming → AI innovation leaders</li>
-                        <li>6-12 months ahead of trends</li>
+                        <li>Ship in weeks, not months</li>
                     </ul>
                 </div>
                 <div class="opportunity-card">
-                    <h3>My Unique Access</h3>
+                    <h3>My Unique Position</h3>
                     <ul class="opportunity-list">
-                        <li>Pre-flip trusted advisor</li>
-                        <li>Technical evaluation expertise</li>
-                        <li>First call for US expansion</li>
-                        <li>Deep ecosystem relationships</li>
+                        <li>Already their trusted advisor</li>
+                        <li>Technical credibility + cultural fluency</li>
+                        <li>See innovations 6-12mo early</li>
+                        <li>Bridge before they need crossing</li>
                     </ul>
                 </div>
                 <div class="opportunity-card">
-                    <h3>Speedrun Potential</h3>
+                    <h3>Speedrun Impact</h3>
                     <ul class="opportunity-list">
-                        <li>50+ technical teams/year</li>
-                        <li>Exclusive early access</li>
-                        <li>Cross-border syndication</li>
+                        <li>50+ pre-vetted teams/year</li>
+                        <li>Deals others can't access</li>
+                        <li>Higher success rate (trust)</li>
                         <li>Proven 0-to-1 playbook</li>
                     </ul>
                 </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #0a0a0a; border-radius: 15px;">
+                <p style="font-size: 1.3em; font-weight: 600;">
+                    Other investors try to 'access' Korean talent through conferences.<br>
+                    <span class="highlight">I'm writing code with them on weekends.</span>
+                </p>
             </div>
         </div>
     </div>
